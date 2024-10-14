@@ -1,129 +1,47 @@
-/* General styles */
-.course-wrapper {
-  padding-top: 6rem; /* Adjust this value as needed to prevent overlap with the navbar */
-  padding-left: 2rem;
-  padding-right: 2rem;
+.courses-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  gap: 2rem;
-
+  padding: 20px;
+  min-height: 100vh;
+  gap: 20px; /* Add gap between cards */
+  background-image: url('/courseBg.jpg'); /* Add background image */
+  background-size: cover; /* Ensure the background image covers the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
 }
-.course-title{
-  padding: 1rem;
-}
-.search-bar {
-    width: 86%;
-    margin-bottom: 20px;
-  }
 
-.course-wrapper h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+.courses-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  gap: 20px; /* Add space between items */
+  padding: 20px; /* Add padding around the container */
+  justify-content: center; /* Center items horizontally */
+}
+
+.course-card {
+  max-width: 345px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer; /* Add cursor pointer for clickable cards */
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.course-image {
+  border-radius: 12px 12px 0 0;
+}
+
+.course-title {
+  font-weight: bold;
   color: #333;
 }
 
-/* Container for the cards */
-.course-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-/* Wrapper for the cards */
-.card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem; /* Adjust the gap between cards as needed */
-  justify-content: center; /* Center the cards */
-}
-
-/* Card styles */
-.MuiCard-root {
-  max-width: 345px;
-  margin: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.MuiCard-root:hover {
-  transform: translateY(-5px);
-}
-
-.MuiCardContent-root {
-  flex-grow: 1;
-}
-
-.MuiCardActions-root {
-  justify-content: center;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1024px) {
-  .course-wrapper {
-    padding-top: 5rem; /* Adjust this value as needed to prevent overlap with the navbar */
-  }
-
-  .course-wrapper h1 {
-    font-size: 2rem;
-  }
-
-  .card-wrapper {
-    gap: 1.5rem;
-  }
-
-  .MuiCard-root {
-    max-width: 300px;
-  }
-  .search-bar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .course-wrapper {
-    padding-top: 4rem; /* Adjust this value as needed to prevent overlap with the navbar */
-  }
-
-  .course-wrapper h1 {
-    font-size: 1.75rem;
-  }
-
-  .card-wrapper {
-    gap: 1.5rem;
-  }
-
-  .MuiCard-root {
-    max-width: 280px;
-  }
-  .search-bar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .course-wrapper {
-    padding-top: 3rem; /* Adjust this value as needed to prevent overlap with the navbar */
-  }
-
-  .course-wrapper h1 {
-    font-size: 1.5rem;
-  }
-
-  .card-wrapper {
-    gap: 1rem;
-  }
-
-  .MuiCard-root {
-    max-width: 100%;
-    margin: 0.5rem;
-  }
-  .search-bar {
-    width: 100%;
-  }
+.course-description {
+  color: #666;
 }

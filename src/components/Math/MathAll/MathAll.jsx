@@ -5,21 +5,21 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import './Courses.css'; // Import the CSS file
+import './MathAll.css'; // Import the CSS file
 
 const courses = [
   {
     id: 1,
-    courseName: "Mathematics 1",
+    courseName: "Middle School Mathematics",
     description: "Intro to numbers, basic addition and subtraction",
-    links: "/courses/maths/all",
+    links: "/courses/maths/middle",
     image: "./Value.png" // Add image URL
   },
   {
     id: 2,
-    courseName: "Mathematics 2",
+    courseName: "High School Mathematics",
     description: "Building on addition and subtraction with shapes",
-    links: "/courses/english/all",
+    links: "/courses/math/high",
     image: "./Value.png" // Add image URL
   }
 ];
@@ -34,7 +34,7 @@ const Courses = () => {
 
   return (
     <div className="courses-wrapper flexCenter">
-      <h1 className="title paddings">Courses Provided</h1>
+      <h1 className="title  paddings">Choose The Class</h1>
       <div className="courses-container innerWidth  paddings">
         {courses.map((course) => (
           <Card key={course.id} className="course-card" onClick={() => handleCardClick(course.links)}>
