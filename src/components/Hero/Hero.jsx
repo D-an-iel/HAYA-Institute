@@ -1,38 +1,41 @@
 import "./Hero.css";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
-import Background from "../BackgroundSlider/BackgroundSlider"
+import Background from "../BackgroundSlider/BackgroundSlider";
 import Logo from '/logo.svg';
 import CallIcon from '@mui/icons-material/Call';
+
 const Hero = () => {
   return (
     <section className="hero-wrapper">
       <Background />
+      
+      {/* Phone banner at the top */}
+      <div className="phone-banner">
+        <CallIcon /><h2>+91 878678788</h2>
+      </div>
 
       <div className="paddings innerWidth flexCenter hero-container">
-           
-        {/* left side */}
+        {/* Left side */}
         <div className="flexColStart hero-left">
           <div className="hero-title">
             <div className="orange-circle" />
             <motion.h1
-            initial={{ y: "2rem", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              duration: 2,
-              type: "ease-in",
-            }}
+              initial={{ y: "2rem", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 2,
+                type: "ease-in",
+              }}
             >
-              Unlock  <br />
-              Your Potential
-              <br /> With Us
+              Unlock <br />
+              Your Potential <br /> With Us
             </motion.h1>
           </div>
           <div className="flexColStart hero-quote flexhero-des">
             <span>"Success is a journey of learning, growth, and perseverance.</span>
             <span>Let us help turn your ambitions into achievements"</span>
           </div>
-
 
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
@@ -42,12 +45,12 @@ const Hero = () => {
               <span className="secondaryText">Premium Courses</span>
             </div>
 
-            <div className="flexColCenter stat">
+            {/* <div className="flexColCenter stat">
               <span>
                 <CountUp start={5000} end={8500} duration={4} /> <span>+</span>
               </span>
               <span className="secondaryText">Happy Students</span>
-            </div>
+            </div> */}
 
             <div className="flexColCenter stat">
               <span>
@@ -58,7 +61,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* right side */}
+        {/* Right side */}
         <div className="flexCenter hero-right">
           <motion.div
             initial={{ x: "7rem", opacity: 0 }}
@@ -69,11 +72,8 @@ const Hero = () => {
             }}
             className="image-container"
           >
-            <img src={Logo} alt="houses" />
+            <img src={Logo} alt="logo" />
           </motion.div>
-        </div>
-        <div className="phone-banner">
-        <CallIcon/><h2>+91 878678788</h2>
         </div>
       </div>
     </section>

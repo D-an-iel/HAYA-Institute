@@ -2,42 +2,58 @@
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column; /* To position phone banner on top */
   height: 100vh; 
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   color: white;
 }
 
+/* Phone Banner */
+.phone-banner {
+  width: 100%;
+  background-color: rgb(74, 0, 88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  position: absolute;
+  top: 4rem; /* Adjust this value to move the banner down */
+  z-index: 10; /* Higher z-index to stay on top */
+  gap: 1rem;
+  color: white;
+  font-size: 1.0rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Adjusting padding for hero-container */
 .hero-container {
-  justify-content: space-around;
+  display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   width: 100%;
   height: 100vh;
   z-index: 1;
-  gap: 15rem;
+  gap: 10rem;
+  padding-top: 6rem; /* Adjust padding-top to give more space for the banner */
 }
 
-/* left side */
+
+
+/* Left Side */
 .hero-left {
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .hero-title {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
   font-weight: bolder;
-}
-.hero-quote{
-  font-weight: bolder;
-  position: relative;
-  color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
-  background-color: rgba(255, 253, 253, 0.5);
-  color: black;
-  border-radius: 1rem;
-  padding: 1rem;
 }
 
 .hero-title > h1 {
@@ -46,31 +62,40 @@
   line-height: 4rem;
 }
 
-.flexhero-des {
+.hero-quote {
+  font-weight: bold;
   position: relative;
-  z-index: 2; 
+  color: black;
+  background-color: rgba(255, 253, 253, 0.7);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
 
 .stats {
-  font-weight: bolder;
-  position: relative;
-  z-index: 2; 
+  display: flex;
+  gap: 2rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
   border-radius: 1rem;
   padding: 1rem;
-  background-color: rgba(255, 253, 253, 1);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
-
-  color: black;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
 
+.stat > :nth-child(1) > :last-child {
+  color: orange;
+}
+
+/* Right Side */
 .hero-right {
   position: relative;
-  z-index: 2; 
+  z-index: 2;
 }
 
 .image-container {
   position: relative;
-  z-index: 2;  
+  z-index: 2;
   width: 30rem;
   height: 35rem;
   overflow: hidden;
@@ -81,72 +106,70 @@
   height: 100%;
 }
 
-.stat > :nth-child(1) > :last-child {
-  color: orange;
-}
-
-.phone-banner{
-  width: 100%;
-  background-color: rgb(74, 0, 88);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
-  gap: 1rem;
-}
-
-/* mobile screens */
+/* Mobile Screens */
 @media (max-width: 640px) {
   .hero-container {
-    margin-top: 2rem;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding-top: 6rem; /* Adjust padding to account for the phone banner */
   }
+
   .hero-title > h1 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
+
   .image-container {
     width: 95%;
-    height: 10rem;
+    height: 15rem;
   }
+
   .stats {
-    justify-content: center;
+    flex-direction: column;
     gap: 1rem;
   }
 }
 
-/* tablet screens */
+/* Tablet Screens */
 @media (min-width: 641px) and (max-width: 1024px) {
   .hero-container {
     gap: 5rem;
+    padding-top: 5rem; /* Adjust padding for phone banner */
   }
+
   .hero-title > h1 {
     font-size: 3rem;
     line-height: 3.5rem;
   }
+
   .image-container {
     width: 25rem;
     height: 30rem;
   }
+
   .stats {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
-/* desktop screens */
+/* Desktop Screens */
 @media (min-width: 1025px) {
   .hero-container {
     gap: 10rem;
   }
+
   .hero-title > h1 {
     font-size: 3.8rem;
     line-height: 4rem;
   }
+
   .image-container {
     width: 30rem;
     height: 35rem;
   }
+
   .stats {
     gap: 3rem;
   }
